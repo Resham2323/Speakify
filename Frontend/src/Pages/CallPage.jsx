@@ -38,7 +38,6 @@ const CallPage = () => {
     const initCall = async () => {
       if (!tokenData?.token || !authUser || !callId) return;
       try {
-        console.log("Initializing stream video call client...");
 
         const user = {
           id: authUser._id,

@@ -11,7 +11,7 @@ import PageLoader from './components/pageLoader.jsx'
 import useAuthUser from './hook/useAuthUser.js';
 import Layout from './components/Layout.jsx'
 import { useThemeStore } from './store/useTheme.jsx'
-import FriendCard from './components/FriendCard.jsx'
+import FriendPage from './Pages/FriendPage.jsx'
 
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
@@ -39,6 +39,7 @@ const App = () => {
            <ChatPage />
         </Layout> :
             <Navigate to={isAuthenticated ? '/onboarding': '/login'} />} />
+            <Route path='/friends' element={<FriendPage/>}/>
         <Route 
         path="/notifications" 
         element={isAuthenticated && isOnboarded ? (
