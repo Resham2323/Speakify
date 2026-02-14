@@ -1,7 +1,9 @@
 import { axiosInstance } from './axios.js';
+
 export const signup = async (signupData) => {
-      const response = await axiosInstance.post('/auth/signup', signupData);
-      return response.data;
+  const response = await axiosInstance.post("/auth/signup", signupData);
+        console.log("hit sihnup api")
+  return response.data;
 };
 
 export const login = async (loginData) => {
@@ -15,14 +17,14 @@ export const logout = async () => {
 };
 
 export const getAuthUser = async () => {
-      try {
-            const res = await axiosInstance.get("/auth/me");
-            return res.data;
-      } catch (err) {
-            console.log("Error in get AuthUser", err);
-            return null;
-      }
-}
+  try {
+    const res = await axiosInstance.get("/auth/me");
+    return res.data;
+  } catch (error) {
+    console.log("Error in getAuthUser:", error);
+    return null;
+  }
+};
 
 export const completeOnboarding = async (userData) => {
       const response = await axiosInstance.post('/auth/onboarding', userData);
