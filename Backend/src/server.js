@@ -9,7 +9,7 @@ import chatRoutes from "./routes/chat.route.js"
 import { connectDb } from "./lib/db.js";
 import path from "path";
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000 ;
 const __dirname = path.resolve();
 
 app.use(cors({

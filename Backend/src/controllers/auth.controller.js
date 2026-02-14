@@ -3,6 +3,7 @@ import User from "../models/User.js"
 import jwt from "jsonwebtoken";
 // signup
 export async function signup(req, res){
+    console.log("start controlling signing",req.body);
     const {email, fullName, password} = req.body;
 try{
 
@@ -68,7 +69,7 @@ try{
 
 }catch(err){
     console.log("error in signup controllers process", err)
-    return res.status(500).json({message:"internal server error"})
+    return res.status(500).json({message:"internal server error", error:err.message})
 }
 }
 
