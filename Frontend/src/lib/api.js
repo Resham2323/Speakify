@@ -36,6 +36,11 @@ export const getUserFriendReq = async () => {
       return response.data;
 }
 
+export const deleteFriendFromList = async (friendId) => {
+      const response = await axiosInstance.delete(`/user/friends/${friendId}`);
+      return response.data
+}
+
 export const getRecommendedUserReq = async () => {
       const response = await axiosInstance.get('/user');
       return response.data;
